@@ -51,7 +51,7 @@ const Skills = () => {
         ))}
       </Grid>
 
-      <Typography variant="h4" align="center"></Typography>
+      <Typography variant="h4" align="center">Concepts</Typography>
       <Grid container spacing={2} sx={{ marginTop: 3 }}>
         {concepts.map((skill, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>

@@ -12,6 +12,11 @@ const Projects = () => {
       title: 'Personal Site',
       description: 'Source Code for This Site',
       link: 'https://github.com/mburns7211/personal-site'
+    },
+    {
+      title: 'Watermark Python Library',
+      description: 'A simple python package for adding watermarks to an image.  Available on pypi as multiwatermark',
+      link: 'https://github.com/mburns7211/multiwatermark'
     }
   ];
 
