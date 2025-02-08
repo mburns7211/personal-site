@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  S3PhotoApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: S3PhotoApiFunction
+      Runtime: python3.9
+      Handler: app.lambda_handler
+      CodeUri: api/get_photo
+      Timeout: 10
+      MemorySize: 128
+      Policies:
+        - S3ReadPolicy:
+            BucketName: mjburns-processed-photos
+      Environment:
+        Variables:
+          S3_BUCKET_NAME: mjburns-processed-photos
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /get-s3-photos
+            Method: GET
+
+Outputs:
+  S3PhotoApiEndpoint:
+    Description: API Gateway endpoint for fetching S3 images
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/get-s3-photos"

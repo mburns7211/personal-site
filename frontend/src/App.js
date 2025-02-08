@@ -8,6 +8,7 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact'
 import Resume from './pages/Resume';
 import { Container } from '@mui/material';
+import Photography from './pages/Photography';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/photography" element={<Photography />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
